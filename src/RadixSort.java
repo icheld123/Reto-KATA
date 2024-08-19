@@ -1,37 +1,34 @@
 public class RadixSort {
-    public static int getMax(int a[], int n) {
-        int max = a[0];
-        for(int i = 1; i<n; i++) {
-            if(a[i] > max) max = a[i];
+    public static int getMax(int[] inputArray) {
+        int max = inputArray[0];
+        for(int i = 1; i<inputArray.length; i++) {
+            if(inputArray[i] > max) max = inputArray[i];
         }
         return max;
     }
 
-    public static void countingSort(int a[], int n, int place){
-        int[] output = new int[n+1];
+    public static void countingSort(int[] inputArray, int place){
+        int[] output = new int[inputArray.length+1];
         int[] count = new int[10];
 
-        for (int i = 0; i < n; i++)
-            count[(a[i] / place) % 10]++;
+        for (int j : inputArray) count[(j / place) % 10]++;
 
         for (int i = 1; i < 10; i++)
             count[i] += count[i - 1];
 
-        for (int i = n - 1; i >= 0; i--) {
-            output[count[(a[i] / place) % 10] - 1] = a[i];
-            count[(a[i] / place) % 10]--;
+        for (int i = inputArray.length - 1; i >= 0; i--) {
+            output[count[(inputArray[i] / place) % 10] - 1] = inputArray[i];
+            count[(inputArray[i] / place) % 10]--;
         }
 
-        for (int i = 0; i < n; i++)
-            a[i] = output[i];
+        System.arraycopy(output, 0, inputArray, 0, inputArray.length);
     }
 
-    // function to implement radix sort
-    public static void radixsort(int a[], int n) {
-        int max = getMax(a, n);
+    public static void radixSort(int[] inputArray) {
+        int max = getMax(inputArray);
 
         for (int place = 1; max / place > 0; place *= 10)
-            countingSort(a, n, place);
+            countingSort(inputArray, place);
     }
 
 }

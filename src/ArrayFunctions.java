@@ -2,18 +2,18 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ArrayFunctions {
-    public static int[] reverse(int[] array){
-        for(int i = 0; i < array.length / 2; i++) {
-            int j = array[i];
-            array[i] = array[array.length - i - 1];
-            array[array.length - i - 1] = j;
+    public static int[] reverse(int[] inputArray){
+        for(int i = 0; i < inputArray.length / 2; i++) {
+            int j = inputArray[i];
+            inputArray[i] = inputArray[inputArray.length - i - 1];
+            inputArray[inputArray.length - i - 1] = j;
         }
-        return array;
+        return inputArray;
     }
 
-    public static int[] getArray(String array){
-        array = array.replaceAll("\\[", "").replaceAll("\\]", "");
-        String[] stringNumbers = array.split(",");
+    public static int[] getArray(String inputArray){
+        inputArray = inputArray.replaceAll("\\[", "").replaceAll("]", "");
+        String[] stringNumbers = inputArray.split(",");
         boolean nonValidArray = false;
         int[] numbers = new int[stringNumbers.length];
         for (int i = 0; i < stringNumbers.length; i++) {
@@ -48,41 +48,36 @@ public class ArrayFunctions {
         return minChange;
     }
 
-    public static int[] getSquare(int[] arr, int S) {
+    public static int[] getSquareAndDelete(int[] inputArray, int S) {
         S = S * 11;
         int counter = 0;
 
-        int[] temp = new int[arr.length];
+        int[] tempArray = new int[inputArray.length];
 
-        for (int num : arr) {
+        for (int num : inputArray) {
             int result = num * num;
             if (result < S) {
-                temp[counter] = result;
+                tempArray[counter] = result;
                 counter++;
             }
         }
-        return java.util.Arrays.copyOf(temp, counter);
+        return java.util.Arrays.copyOf(tempArray, counter);
     }
 
-    public static void printArray(int[] a, int n) {
+    public static void printArray(int[] inputArray) {
         System.out.print("[ ");
-        for (int i = 0; i < n; ++i)
-            System.out.print(a[i] + " ");
+        for (int j : inputArray) System.out.print(j + " ");
         System.out.print("]");
     }
 
-    public static int[] removeElements(int[] arr, int S) {
+    public static int[] removeElements(int[] inputArray, int S) {
         int counter = 0;
 
-        for (int i = 0; i < arr.length; i++) {
-            int num = arr[i];
+        for (int i = 0; i < inputArray.length; i++) {
+            int num = inputArray[i];
             int result = 0;
             int factor = 1;
-            boolean numberRemoved = true;
-
-            if (num == 0){
-                numberRemoved = false;
-            }
+            boolean numberRemoved = num != 0;
 
             while (num > 0) {
                 int digit = num % 10;
@@ -95,9 +90,9 @@ public class ArrayFunctions {
             }
 
             if (!numberRemoved) {
-                arr[counter++] = result;
+                inputArray[counter++] = result;
             }
         }
-        return java.util.Arrays.copyOf(arr, counter);
+        return java.util.Arrays.copyOf(inputArray, counter);
     }
 }

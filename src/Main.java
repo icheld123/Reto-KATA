@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         final int S = 7;
         Scanner myObj = new Scanner(System.in);
-        String opt = "";
+        String opt;
 
         while(true){
             System.out.print("\nSelect an option or press any other key to leave:\n-> Challenge 1.\n-> Challenge 2.\n-> Challenge 3.\nYour option: ");
@@ -14,38 +14,39 @@ public class Main {
                 break;
             }
 
-            System.out.println("Enter all numbers at once, separating each one of them with a comma. E.g: 1,2,3.");
+            System.out.println("Enter all numbers at once, separating each one of them with inputArray comma. E.g: 1,2,3.");
             String array = myObj.nextLine();
-            int a[] = ArrayFunctions.getArray(array);
+            int[] inputArray = ArrayFunctions.getArray(array);
+            int[] resultArray;
 
-            while (a.length==0){
+            while (inputArray.length==0){
                 System.out.println("Invalid input. Please enter numbers separated by commas.");
                 array = myObj.nextLine();
-                a = ArrayFunctions.getArray(array);
+                inputArray = ArrayFunctions.getArray(array);
             }
-            int n = a.length;
             System.out.print("The array given is: \n");
-            ArrayFunctions.printArray(a, n);
+            ArrayFunctions.printArray(inputArray);
 
             switch (opt){
                 case "1":
-                    a = ArrayFunctions.reverse(a);
+                    resultArray = ArrayFunctions.reverse(inputArray);
                     System.out.print("\n\nAfter applying sort, the array elements are - \n");
-                    ArrayFunctions.printArray(a, n);
+                    ArrayFunctions.printArray(resultArray);
                     System.out.print("\n\nAfter applying elimination of S = "+S+", the array elements are - \n");
-                    a = ArrayFunctions.removeElements(a,S);
-                    ArrayFunctions.printArray(a, a.length);
+                    resultArray = ArrayFunctions.removeElements(resultArray,S);
+                    ArrayFunctions.printArray(resultArray);
                     break;
                 case "2":
-                    a = ArrayFunctions.reverse(a);
+                    resultArray = inputArray;
                     System.out.print("\n\nAfter applying sort, the array elements are:\n");
-                    RadixSort.radixsort(a, n);
+                    RadixSort.radixSort(resultArray);
+                    ArrayFunctions.printArray(resultArray);
                     System.out.print("\n\nAfter applying square function to every array elements and eliminating every S = "+S*11+" element:\n");
-                    a = ArrayFunctions.getSquare(a,S);
-                    ArrayFunctions.printArray(a, a.length);
+                    resultArray = ArrayFunctions.getSquareAndDelete(resultArray,S);
+                    ArrayFunctions.printArray(resultArray);
                     break;
                 case "3":
-                    int minChange = ArrayFunctions.getMinimumChange(a);
+                    int minChange = ArrayFunctions.getMinimumChange(inputArray);
                     System.out.print("\n\nThe minimum amount of change is: "+minChange+"\n");
                     break;
             }
