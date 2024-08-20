@@ -30,7 +30,7 @@ public class ArrayFunctions {
     }
 
     public static boolean isValidNumber(String str) {
-        String regex = "^\\d+$";
+        String regex = "^-?\\d+$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(str);
         return matcher.matches();

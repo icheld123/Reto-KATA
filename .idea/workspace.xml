@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5aabfce6-c128-46bc-a38c-739e846a289a" name="Changes" comment="Unifying array utilies">
+    <list default="true" id="5aabfce6-c128-46bc-a38c-739e846a289a" name="Changes" comment="Changing func. names and simplifying structures">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ArrayFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ArrayFunctions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RadixSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RadixSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RadixSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QuickSort.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +38,7 @@
   }
 }]]></component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -89,11 +89,20 @@
       <option name="project" value="LOCAL" />
       <updated>1724086800594</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Changing func. names and simplifying structures">
+      <option name="closed" value="true" />
+      <created>1724108605947</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1724108605947</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Unifying array utilies" />
-    <option name="LAST_COMMIT_MESSAGE" value="Unifying array utilies" />
+    <MESSAGE value="Changing func. names and simplifying structures" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changing func. names and simplifying structures" />
   </component>
 </project>

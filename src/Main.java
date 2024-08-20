@@ -39,10 +39,11 @@ public class Main {
                 case "2":
                     resultArray = inputArray;
                     System.out.print("\n\nAfter applying sort, the array elements are:\n");
-                    RadixSort.radixSort(resultArray);
+                    QuickSort.quickSort(resultArray, 0, resultArray.length - 1);
                     ArrayFunctions.printArray(resultArray);
                     System.out.print("\n\nAfter applying square function to every array elements and eliminating every S = "+S*11+" element:\n");
                     resultArray = ArrayFunctions.getSquareAndDelete(resultArray,S);
+                    QuickSort.quickSort(resultArray, 0, resultArray.length - 1);
                     ArrayFunctions.printArray(resultArray);
                     break;
                 case "3":
